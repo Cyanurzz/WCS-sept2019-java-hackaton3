@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Reward {
@@ -15,7 +17,9 @@ public class Reward {
 	private String titre;
 	private String montant;
 	private String code;
-
+	 @ManyToOne
+	 @JoinColumn(name = "user_id")
+	 private User user;
 
 	public Reward() {
 		
@@ -57,6 +61,16 @@ public class Reward {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }
