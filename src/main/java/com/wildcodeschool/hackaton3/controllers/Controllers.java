@@ -24,6 +24,6 @@ public class Controllers {
     public String goHome(Model model, @RequestParam(required=true)String name) {
 
 		model.addAttribute("user",userRepo.findByName(name));
-        return "index";
+        return "home";
     }	
 }
