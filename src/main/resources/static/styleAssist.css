@@ -15,7 +15,9 @@ body{
 	max-width:100%;
 	justify-content: center;
 	align-items: center;
-	animation: slidein 5s;
+	animation: slidein;
+	animation-duration:50s;
+
 }
 
 @keyframes slidein {
@@ -36,6 +38,11 @@ body{
   	margin-top:2vh;
   	margin-left:0%;
   }
+  99%{
+  	margin-top:2vh;
+  	margin-left:0%;
+  }
+  
   100%{
   	margin-top:2vh;
 	margin-left:200vw;

@@ -24,7 +24,7 @@ public class Controllers {
 	@GetMapping("/index")
     public String goIndex(@RequestParam(required=true)String name) {
 		ConnectApi.connectAPI();
-        return "index";
+        return "home";
     }
 	
 	@GetMapping("/home")
