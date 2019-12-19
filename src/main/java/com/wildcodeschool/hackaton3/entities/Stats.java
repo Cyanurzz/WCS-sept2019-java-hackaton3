@@ -18,6 +18,9 @@ public class Stats {
 	private String type;
 	private String transport;
 	private String multiplicateur;
+	private double prix;
+	private double CO2;
+	private boolean times;
 	 @ManyToOne
 	 @JoinColumn(name = "user_id")
 	 private User user;
@@ -25,6 +28,54 @@ public class Stats {
 	
 	public Stats() {
 	}
+	
+	
+
+	public Long getId() {
+		return id;
+	}
+
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public double getPrix() {
+		return prix;
+	}
+
+
+
+	public void setPrix(double prix) {
+		this.prix = prix;
+	}
+
+
+
+	public double getCO2() {
+		return CO2;
+	}
+
+
+
+	public void setCO2(double cO2) {
+		CO2 = cO2;
+	}
+
+
+
+	public boolean isTimes() {
+		return times;
+	}
+
+
+
+	public void setTimes(boolean times) {
+		this.times = times;
+	}
+
 
 
 	public String getText() {

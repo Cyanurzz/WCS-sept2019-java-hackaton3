@@ -4,9 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 @Entity
 public class User {
 
@@ -16,20 +13,79 @@ public class User {
 	
 	private String name;
 	private String picture;
-	private Double xp;
+	private int xp;
 	private int lvl;
+	private Double tCar;
+	private Double tBus;
+	private Double tTram;
+	private Double tBicycle;
+	private Double tFoot;
 	 
 	public User() {
 	}
-
-	public User(String name, String picture, Double xp) {
+	
+	public User(Long id, String name, String picture, int xp, int lvl, Double tCar, Double tBus, Double tTram, Double tBicycle, Double tFoot) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.picture = picture;
 		this.xp = xp;
+		this.lvl = lvl;
+		this.tCar = tCar;
+		this.tBus = tBus;
+		this.tTram = tTram;
+		this.tBicycle = tBicycle;
+		this.tFoot = tFoot;
 	}
 
-	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Double gettCar() {
+		return tCar;
+	}
+
+	public void settCar(Double tCar) {
+		this.tCar = tCar;
+	}
+
+	public Double gettBus() {
+		return tBus;
+	}
+
+	public void settBus(Double tBus) {
+		this.tBus = tBus;
+	}
+
+	public Double gettTram() {
+		return tTram;
+	}
+
+	public void settTram(Double tTram) {
+		this.tTram = tTram;
+	}
+
+	public Double gettBicycle() {
+		return tBicycle;
+	}
+
+	public void settBicycle(Double tBicycle) {
+		this.tBicycle = tBicycle;
+	}
+
+	public Double gettFoot() {
+		return tFoot;
+	}
+
+	public void settFoot(Double tFoot) {
+		this.tFoot = tFoot;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -46,11 +102,11 @@ public class User {
 		this.picture = picture;
 	}
 
-	public Double getXp() {
+	public int getXp() {
 		return xp;
 	}
 
-	public void setXp(Double xp) {
+	public void setXp(int xp) {
 		this.xp = xp;
 	}
 

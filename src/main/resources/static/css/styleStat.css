@@ -1,0 +1,16 @@
+.textStat{
+    height: 90vh;
+    width: 70vw;
+    margin:auto;
+    display:flex;
+    text-align :center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 17pt;
+    
+}
+body{
+    background-image: url("/img/space-1164579_1920.png");
+    background-attachment: fixed;
+}
