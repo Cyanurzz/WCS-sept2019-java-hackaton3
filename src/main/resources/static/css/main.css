@@ -30,6 +30,9 @@
 body, html {
 	height: 100%;
 	font-family: Ubuntu-Regular, sans-serif;
+	width:100vw;
+	max-width: 100%;
+	overflow:hidden;
 }
 
 /*---------------------------------------------*/
@@ -475,5 +478,35 @@ iframe {
   }
 }
 
+img{
+	height:90%;
+	width:50%;
+}
 
+
+.img{
+	position:absolute;
+	bottom:0;
+	height:100px;
+	width:210px;
+	margin-left:-100vw;
+	overflow: hidden;
+	background-image: url("../mario.gif");
+	background-position:90% 50%;
+	background-size: 200%;
+	z-index:1;
+}
+
+.addAnimate{
+		animation: run 4s;
+}
+
+@keyframes run{
+	from{
+		margin-left: -100vw;
+	}
+	to{
+		margin-left: 200vw;
+	}
+}
 

@@ -82,6 +82,18 @@
         }
         
     });
-
-
+    
 })(jQuery);
+
+$('form').submit( function(event) {
+    var formId = this.id;
+    form = this;
+    console.log("coucou");
+    $('#mario').addClass("addAnimate");
+    event.preventDefault();
+
+    setTimeout( function () { 
+        form.submit();
+    }, 2000);
+
+}); 
