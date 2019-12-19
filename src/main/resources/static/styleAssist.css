@@ -46,8 +46,8 @@ body{
 
 .text{
 	margin-bottom:5vh;
-	  width:50vw;
-	  height:20vh;
+	  width:70vw;
+	  height:10vh;
 	  display:flex;
 	  background-color:#344051;
 	  color:#fff;
@@ -55,23 +55,32 @@ body{
 }
 
 .text a, .text a span{
- margin: auto;
+
+ font-size: small;
 }
 
 .img{
 	margin-top:auto;
 	margin-bottom:2vh;
-	height:215px;
-	width:210px;
+	height:100px;
+	width:100px;
 	overflow: hidden;
 	border-radius: 50% ;
 	background-image: url("https://media.giphy.com/media/3o7aTvfZC0vDV6Q3S0/giphy.gif");
-	background-position:38% 10%;
+	background-size:240%;
+	background-position:38% 0%;
 }
 
 .innerText{
 	width:90%;
+	height:90%;
 	margin-left:auto;
 	margin-right:auto;
-	height:100%;
+	margin-top:auto;
+	margin-bottom: auto;
+}
+
+h1{
+	margin:0;
+	line-height :10px;
 }
