@@ -44,23 +44,23 @@ a{
     
 }
 
-.carte{
+#map{
     position: relative;
 	width:100vw;
 	max-width:100%;
 	height:100vh;
 	max-height:100%;
 	overflow:hidden;
+	background-image: url("orleans.png");
+	background-position:center;
 }
     
-    
-
-
+   
 nav {
     position: absolute;
     width: 100vw;
     max-width: 100%;
-    height: 6.5vh;
+    height: 10vh;
     
     
     bottom: 0;
@@ -90,20 +90,23 @@ nav {
 
 #radiusr{
    
-  padding: 10px;
+  padding-right: 10px;
+  
   border-top-left-radius: 400px 200px;
     background: #005f7d;
     width: 100px;
-    
+    height:10vh;
     text-align: right;
 }
 
 #radiusg{
-    
-  padding: 10px;
-  border-top-right-radius: 400px 200px;
+    padding-right: 15px;
+  	padding-top:10px;
+  	padding-bottom:10px;
+  	border-top-right-radius: 400px 200px;
     background: #005f7d;
     width: 100px;
+    height:10vh;
     text-align: left;
 }
 
@@ -245,4 +248,34 @@ h1{
 .placeholderVelo{
 	width:20px;
 	height:20px;
+}
+
+.cadeau{
+	height:100%;
+	width:auto;
+	animation: shake 1s infinite;
+}
+
+.target{
+	max-height:100%;
+	width:auto;
+}
+
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }

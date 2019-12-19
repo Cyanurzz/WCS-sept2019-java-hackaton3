@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 
 public class ConnectApiJourney {
 		
-	public static Object connectAPI() {
+	public static JourneyPOJO connectAPI(String toTravel) {
 		
 		WebClient webClient = WebClient.create("https://api.navitia.io/v1");
 		//coverage/fr-cen/journeys?from=1.91909%3B47.91939&to=1.95634%3B47.92388&"
@@ -21,7 +21,7 @@ public class ConnectApiJourney {
 				.uri(uriBuilder-> uriBuilder
 						.path("/coverage/{coverage}/journeys")
 						  .queryParam("from", "1.91523;47.92066")
-						  .queryParam("to", "1.94973;47.92393")			       
+						  .queryParam("to", toTravel)			       
 						  .build("fr-cen"))  
 				.headers(headers -> headers.setBasicAuth("a3653e1d-06a1-4edc-b768-c9bd561d3251", ""))
 				.retrieve()
@@ -72,7 +72,7 @@ public class ConnectApiJourney {
 
 		}
 		Object journey = null;
-		return journey;
+		return journeyPOJO;
 	}
 }
 	
