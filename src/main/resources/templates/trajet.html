@@ -39,10 +39,10 @@
 					Connexion
 				</span>
 				 -->
-				<form id="form" class="login100-form validate-form p-b-33 p-t-5" action="/index">
+				<form id="form" class="login100-form validate-form p-b-33 p-t-5" action="/trajetResults" method="post">
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" id="adresse" name="adress" placeholder="On va ou?">
+						<input class="input100" type="text" id="adresse" name="adresse" placeholder="On va ou?">
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
@@ -53,8 +53,8 @@
 							</input>
 							<input  type="button" class="login100-form-btn btnCustom col-3"  value="en bus">
 							</input>
-							<input  type="button" class="login100-form-btn btnCustom col-3" value="en vélo">
-							</input>
+							<button  type="submit" class="login100-form-btn btnCustom col-3" value="en vélo">
+							</button>
 						</div>
 					</div>
 				</form>
@@ -78,8 +78,7 @@
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
-	<script src="adresse.js"></script>
+
 
 </body>
 </html>
