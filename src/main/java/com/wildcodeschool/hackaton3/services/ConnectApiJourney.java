@@ -1,16 +1,18 @@
 package com.wildcodeschool.hackaton3.services;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import reactor.core.publisher.Mono;
 
-public class ConnectApi {
-
-	
+public class ConnectApiJourney {
+		
 	public static Object connectAPI() {
 		
 		WebClient webClient = WebClient.create("https://api.navitia.io/v1");
@@ -26,12 +28,20 @@ public class ConnectApi {
 		      .bodyToMono(String.class);
 		String response = call.block();
 		ObjectMapper objectMapper = new ObjectMapper();
-
+		JourneyPOJO journeyPOJO = new JourneyPOJO(); 
+		ArrayList<Coordinates> coordinatesList = new ArrayList<Coordinates>();
 		try {
 
 			JsonNode jsonData = objectMapper.readTree(response);
 			JsonNode journeys = jsonData.get("journeys");
 			JsonNode parentSection = journeys.get(0);
+			JsonNode distances = parentSection.get("distances");
+			JsonNode walking = distances.get("walking");
+			JsonNode fare = parentSection.get("fare");
+			JsonNode total = fare.get("total");
+			JsonNode tarifCentimes = total.get("value");
+			JsonNode co2 = parentSection.get("co2_emission");
+			JsonNode co2Em = co2.get("value");
 			JsonNode sections = parentSection.get("sections");
 			JsonNode parentGeoJson = sections.get(0);
 			JsonNode geoJson = parentGeoJson.get("geojson");
@@ -42,13 +52,18 @@ public class ConnectApi {
 			Double lon = 0d;			
 			Coordinates coords = new Coordinates();
 			for (int i = 0 ; i < coordinates.size() ; i++) {
-				lat = mapper.treeToValue(coordinates.get(i).get(0), Double.class);
-				lon = mapper.treeToValue(coordinates.get(i).get(1), Double.class);
-				System.out.println(lat);
+				lon = mapper.treeToValue(coordinates.get(i).get(0), Double.class);
+				lat = mapper.treeToValue(coordinates.get(i).get(1), Double.class);
 				coords.setLat(lat);
 				coords.setLon(lon);
+				coordinatesList.add(coords);
 			} 
-			return coords;
+			journeyPOJO.setWalkDistance(mapper.treeToValue(walking, Integer.class));
+			journeyPOJO.setTarifCentimes(mapper.treeToValue(tarifCentimes, String.class));
+			journeyPOJO.setCo2Emissions(mapper.treeToValue(co2Em, Double.class));
+			journeyPOJO.setCoordinates(coordinatesList);
+			
+			return journeyPOJO;
 		} 
 		
 		catch (IOException e) {
@@ -60,3 +75,4 @@ public class ConnectApi {
 		return journey;
 	}
 }
+	

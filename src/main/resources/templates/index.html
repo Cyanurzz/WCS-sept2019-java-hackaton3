@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styleAssist.css">
+	      <script type = "text/javascript">
+		
+         function showLocation(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            alert("Latitude : " + latitude + " Longitude: " + longitude);
+         }
+
+         function errorHandler(err) {
+            if(err.code == 1) {
+               alert("Error: Access is denied!");
+            } else if( err.code == 2) {
+               alert("Error: Position is unavailable!");
+            }
+         }
+			
+         function getLocation() {
+
+            if(navigator.geolocation) {
+               
+               // timeout at 60000 milliseconds (60 seconds)
+               var options = {timeout:60000};
+               navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+            } else {
+               alert("Sorry, browser does not support geolocation!");
+            }
+         }
+			
+      </script>
 </head>
 <body>
-
+	<div class="customContainer">
+		<div class="text">
+			<div class="innerText">	
+				<h1>
+				  <a href="" class="typewrite" data-period="10000" data-type='[ "Salut Jean Novice, cest moi ton assistant. On va ou ajourdhui?"]'>
+				    <span class="wrap"></span>
+				  </a>
+				 
+				</h1>
+			</div>
+		</div>
+		<div class="img">
+		</div>
+	</div>
+	      <form>
+         <input type = "button" onclick = "getLocation();" value = "Get Location"/>
+      </form>
 </body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="testAssist.js"></script>	
 </html>

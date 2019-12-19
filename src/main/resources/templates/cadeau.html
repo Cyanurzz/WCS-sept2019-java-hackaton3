@@ -1,0 +1,53 @@
+<head>
+    <link href="cadeau.css" rel="stylesheet">
+</head>
+
+
+<div class="container">
+  <div class="card" onclick="flip(event)">
+    <div class="front">
+      <!--<h1 class="lolo">?</h1>
+      <p> Un cadeau pour te récompenser</p>-->
+    </div>
+    <div class="back">
+      <p>Tu as gagné un bon de -20% chez Bizzbee!</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card"  onclick="flip(event)">
+    <div class="front2">
+      <!--<h1 class="lolo">?</h1>
+      <p> Un cadeau pour te récompenser</p>-->
+    </div>
+    <div class="back">
+      <p>Tu as gagné un bon de -20% chez Courir!</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card"  onclick="flip(event)">
+    <div class="front3">
+      <!--<h1 class="lolo">?</h1>
+      <p> Un cadeau pour te récompenser</p>-->
+    </div>
+    <div class="back">
+      <p>Tu as gagné un bon de -15% sur ta prchaine coupe chez "la barbe de papa!</p>
+    </div>
+  </div>
+</div>
+<script>
+    function flip(event){
+	var element = event.currentTarget;
+	if (element.className === "card") {
+    if(element.style.transform == "rotateY(180deg)") {
+      element.style.transform = "rotateY(0deg)";
+    }
+    else {
+      element.style.transform = "rotateY(180deg)";
+    }
+  }
+};
+</script>
