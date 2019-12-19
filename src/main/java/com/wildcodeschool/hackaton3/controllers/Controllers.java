@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.wildcodeschool.hackaton3.repos.UserRepository;
 import com.wildcodeschool.hackaton3.services.ConnectApi;
+import com.wildcodeschool.hackaton3.services.ConnectApiJourney;
 import com.wildcodeschool.hackaton3.services.ConnectGOUV;
+import com.wildcodeschool.hackaton3.services.JourneyPOJO;
 
 @Controller
 public class Controllers {
@@ -49,8 +51,12 @@ public class Controllers {
     public String gotrajet(Model model, @RequestParam String adresse) {
 		System.out.println(adresse);
 		Double coords[] = ConnectGOUV.connectgouv(adresse.replace(' ','+'));
-		System.out.println(coords[0]);
-		System.out.println(coords[1]);
-        return "trajet";
+		String lon = coords[0].toString();
+		String lat = coords[1].toString();
+		String coord = lon + ";"+lat;
+		System.out.println(coord);
+		JourneyPOJO journeyPOJO = new JourneyPOJO();
+		journeyPOJO = ConnectApiJourney.connectAPI(coord);
+        return "testOPM";
     }	
 }
