@@ -33,4 +33,10 @@ public class Controllers {
 		model.addAttribute("user",userRepo.findByName(name));
         return "home";
     }	
+	
+	@GetMapping("/trajet")
+    public String gotrajet(Model model) {
+
+        return "trajet";
+    }	
 }
