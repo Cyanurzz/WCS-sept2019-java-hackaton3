@@ -45,7 +45,12 @@ public class Controllers {
     public String gotrajet(Model model) {
 		return "trajet";
 	}
-
+	
+	
+	@GetMapping("/cadeau")
+    public String goCadeau(Model model) {
+		return "cadeau";
+	}
     
 	@PostMapping("/trajetResults")
     public String gotrajet(Model model, @RequestParam String adresse) {
