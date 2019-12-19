@@ -16,7 +16,13 @@ public class Controllers {
     private UserRepository userRepo;
 	
 	@GetMapping("/")
-    public String goIndex() {
+    public String goLogin() {
+		ConnectApi.connectAPI();
+        return "login";
+    }
+
+	@GetMapping("/index")
+    public String goIndex(@RequestParam(required=true)String name) {
 		ConnectApi.connectAPI();
         return "index";
     }
