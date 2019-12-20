@@ -75,3 +75,8 @@ var TxtType = function(el, toRotate, period) {
     	  setTimeout(function(){$("#xp-increase-fx").fadeOut(500);$("#xp-bar-fill").css({"-webkit-transition":"all 0.5s ease","box-shadow":""});},2000);
     	 
     	}
+    	
+    	
+    $('#search').click(function(e) {
+    	$('#destination').addClass("show");
+    });

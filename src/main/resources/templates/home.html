@@ -27,7 +27,7 @@
 		<div class="text">
 			<div class="innerText">	
 				<h1>
-				  <a href="" class="typewrite" data-period="1500" data-type='[ "Salut Jean Novice, cest moi ton assistant. On va où aujourd&#44hui?","hey! je crois que tu as des cadeaux a ouvrir juste en bas!"]'>
+				  <a href="" class="typewrite" data-period="1500" data-type='[ "Salut Jean Novice, cest moi ton assistant. On va où aujourdhui?","hey! je crois que tu as des cadeaux a ouvrir juste en bas!"]'>
 				    <span class="wrap"></span>
 				  </a>
 				 
@@ -43,7 +43,7 @@
     <header>
         <div class="bouton">
             
-            <button type="button" class="btn btn-success btn-circle btn-xl"><a href="/trajet">GO</a>
+            <button id="search" type="button" class="btn btn-success btn-circle btn-xl">GO
                             </button>
         </div>
       <nav> 
@@ -57,18 +57,33 @@
         </ul>
       </nav>
     </header>
-    <!-- modales -->
-     <div class="container">
-  <div class="card" onclick="flip(event)">
-    <div class="front">
-      <!--<h1 class="lolo">?</h1>
-      <p> Un cadeau pour te récompenser</p>-->
-    </div>
-    <div class="back">
-      <p>Tu as gagné un bon de -20% chez Bizzbee!</p>
-    </div>
-  </div>
-</div>
+
+<div id="destination" class="container py-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <span class="anchor" id="formChangePassword"></span>
+                    <hr class="mb-5">
+
+                    <!-- form card change password -->
+                    <div class="card card-outline-secondary">
+                        <div class="card-header">
+                            <h3 class="mb-0">destination</h3>
+                        </div>
+                        <div class="card-body">
+                            <form class="form" role="form" autocomplete="off">
+                                <div class="form-group">
+                                    <label for="inputPasswordOld">Entrez l'adresse de destination</label>
+                                    <textarea type= class="form-control" id="inputPasswordOld" rows="2" required=""></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success btn-lg float-right btnCustom">Montre moi le trajet</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <!-- /form card change password -->
      
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
