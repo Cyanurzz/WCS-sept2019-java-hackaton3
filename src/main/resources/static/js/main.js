@@ -94,6 +94,6 @@ $('form').submit( function(event) {
 
     setTimeout( function () { 
         form.submit();
-    }, 2000);
+    }, 2500);
 
 }); 
