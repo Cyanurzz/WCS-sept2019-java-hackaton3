@@ -28,17 +28,23 @@ public class Controllers {
     }
 
 	@GetMapping("/index")
-    public String goIndex(@RequestParam(required=true)String name) {
+    public String goIndex(@RequestParam(required=false)String name) {
 
 		
         return "home";
     }
 	
 	@GetMapping("/home")
-    public String goHome(Model model, @RequestParam(required=true)String name) {
+    public String goHome(Model model, @RequestParam(required=false)String name) {
 
 		model.addAttribute("user",userRepo.findByName(name));
         return "home";
+    }	
+	@GetMapping("/home2")
+    public String goHome2(Model model, @RequestParam(required=false)String name) {
+
+		model.addAttribute("user",userRepo.findByName(name));
+        return "home2";
     }	
 	
 	@GetMapping("/trajet")
