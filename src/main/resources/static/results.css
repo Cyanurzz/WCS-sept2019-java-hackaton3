@@ -165,16 +165,33 @@ nav {
 
 .garisson{
 	position:absolute;
-	margin-top:2vh;
+	margin-top:65vh;
 	margin-left:200vw;
 	display:flex;
-	flex-direction:column-reverse;
+	flex-direction:row;
 	width:100vw;
 	max-width:100%;
 	justify-content: center;
 	align-items: center;
-	animation: slidein 15s;
+	animation: slidein 9s;
 }
+
+.garisson2{
+	position:absolute;
+	margin-top:65vh;
+	margin-left:200vw;
+	display:flex;
+	flex-direction:row;
+	width:100vw;
+	max-width:100%;
+	justify-content: center;
+	align-items: center;
+	animation: slidein 18s;
+	animation-delay:9s;
+}
+
+
+
 
 @keyframes slidein {
   0% {
@@ -182,21 +199,21 @@ nav {
     margin-left:0%; 
   }
   10%{
-    margin-top:15vh;
+    margin-top:65vh;
     margin-left:0%;
 
   }
   50% {
-    margin-top:15vh;
+    margin-top:65vh;
     margin-left:0%;
   }
   90%{
-  	margin-top:15vh;
+  	margin-top:65vh;
   	margin-left:0%;
   }
   100%{
-  	margin-top:15vh;
-	margin-left:200vw;
+  	margin-top:65vh;
+	margin-left:0%;
   }
 }
 
@@ -205,7 +222,7 @@ nav {
 .text{
 	  margin-bottom:5vh;
 	  width:75vw;
-	  height:10vh;
+	  height:20vh;
 	  display:flex;
 	  background-color:#344051;
 	  color:#fff;
@@ -236,8 +253,7 @@ textarea{
 }
 
 .img{
-	margin-top:auto;
-	margin-bottom:2vh;
+
 	height:100px;
 	width:100px;
 	overflow: hidden;

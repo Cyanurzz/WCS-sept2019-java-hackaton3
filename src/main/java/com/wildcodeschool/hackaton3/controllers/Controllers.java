@@ -45,7 +45,10 @@ public class Controllers {
     public String gotrajet(Model model) {
 		return "trajet";
 	}
-	
+	@GetMapping("/results")
+    public String goResults(Model model) {
+		return "results";
+	}	
 	
 	@GetMapping("/cadeau")
     public String goCadeau(Model model) {

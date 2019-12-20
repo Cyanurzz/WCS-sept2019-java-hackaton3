@@ -80,3 +80,15 @@ var TxtType = function(el, toRotate, period) {
     $('#search').click(function(e) {
     	$('#destination').addClass("show");
     });
+    
+    $('#garrissonSearch').click(function(e) {
+    	$('#destination').removeClass("show");
+    	$('#destination').addClass("hide");
+    	$('#destination2').addClass("show2");
+    	setTimeout(function () {
+    	       window.location.href = "http://10.0.28.196:8080/results"; //will redirect to your blog page (an ex: blog.html)
+    	    }, 2000); //will call the function after 2 secs.
+
+    });
+    
+  
