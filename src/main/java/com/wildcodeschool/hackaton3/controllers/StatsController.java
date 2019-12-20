@@ -24,6 +24,12 @@ public class StatsController {
 	@Autowired
 	private UserRepository userRepository;
 	
+	@GetMapping("statstest")
+	public String toStat(Model model) {
+		
+		return "statstest";
+	}
+
 	
 	@GetMapping("/stats")
 	public String toStats(Model model)  { //@RequestParam long id,
@@ -46,19 +52,13 @@ public class StatsController {
 		
 		User myUser = userRepository.getOne(id);
 		
-		Double tCar = myUser.gettCar();
-		Double tTram = myUser.gettTram();
-		Double tBus = myUser.gettBus();
-		Double tBike = myUser.gettBicycle();
-		Double[] tVehicles = {tCar, tTram, tBus, tBike};
-		
 		
 		ArrayList<String> res = new ArrayList<String>();
 		
 		
 		for(Stats vehicle: vehicles) {
 			
-			Double rejetTotal = vehicle.getCO2()  * tVehicles[0];
+			
 		}
 		
 		
@@ -70,7 +70,6 @@ public class StatsController {
 		
 		res.add("Le savais tu ?  En moyenne on passe 7820h par ans pour aller et rentrer du travail ... On lit en moyenne 300 mots par minutes, ce qui fait un livre toutes les 3 heures environ... Ça ferais beaucoup de livre en 1 ans ...");
 		res.add("En partant du principe que la nourriture est un carburant, une portions de pates sans accompagnement emmet 3,1 grammes de CO2 a la production, la marche ou le vélo sont donc les moyens les plus éconnomes.");
-		res.add("La navette sp");
 		model.addAttribute("stats", res);
 		return "stats";
 	}
