@@ -70,8 +70,8 @@ public class StatsController {
 		
 		
 		
-		res.add("Le savais tu ?  En moyenne on passe 7820h par ans pour aller et rentrer du travail ... On lit en moyenne 300 mots par minutes, ce qui fait un livre toutes les 3 heures environ... Ça ferais beaucoup de livre en 1 ans ...");
-		res.add("En partant du principe que la nourriture est un carburant, une portions de pates sans accompagnement emmet 3,1 grammes de CO2 a la production, la marche ou le vélo sont donc les moyens les plus éconnomes.");
+		res.add("Le savais-tu ?  En moyenne on passe 782h par an pour aller et rentrer du travail ... On lit en moyenne 300 mots par minutes, ce qui fait un livre toutes les 3 heures environ... Ça ferai beaucoup de livres en 1 an ...");
+		res.add("En partant du principe que la nourriture est un carburant, une portion de pates sans accompagnement emmet 3,1 grammes de CO2 a la production, la marche ou le vélo sont donc les moyens de se déplacer les plus éconnomes.");
 		model.addAttribute("stats", res);
 		return "stats";
 	}
