@@ -24,10 +24,16 @@ public class StatsController {
 	@Autowired
 	private UserRepository userRepository;
 	
-	@GetMapping("statstest")
-	public String toStat(Model model) {
+	@GetMapping("/statstest")
+	public String toStat1(Model model) {
 		
 		return "statstest";
+	}
+	
+	@GetMapping("/newResultStat")
+	public String toStat2(Model model) {
+		
+		return "newResultStat";
 	}
 
 	
